@@ -15,3 +15,8 @@ def index1(request):
 def index2(request):
     dataStored = Remark.objects.all()
     return render(request, 'app1/AccessIt.html', {"passData": dataStored})
+
+
+def index3(request, pk):
+    dateStored = Remark.objects.get(pk=pk)
+    return render(request, 'app1/priKey.html', {"ds": dateStored})
