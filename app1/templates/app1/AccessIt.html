@@ -24,8 +24,8 @@
             </tr>
             {% for i in passData %}
             <tr>
-                <td> {{ i.name }}</td>
-                <td> {{ i.text }}</td>
+                <td> {{ i.name|title }}</td>
+                <td> {{ i.text|title }}</td>
             </tr>
             {% endfor %}
         </table>
