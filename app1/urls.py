@@ -5,6 +5,6 @@ urlpatterns = [
     path('index/', views.index),
     path('index1/', views.Index1.as_view()),
     path('index2/', views.Index2.as_view()),
-    path('index3/<int:pk>', views.index3),
+    path('index3/<int:pk>', views.Index3.as_view()),
     path('index4/', views.Index4.as_view())
 ]
