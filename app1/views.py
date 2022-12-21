@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import date
 from .models import Remark
+from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
@@ -27,10 +29,17 @@ class Index2(TemplateView):
 
 
 def index3(request, pk):
-    dateStored = Remark.objects.get(pk=pk)
+    try:
+        dateStored = Remark.objects.get(pk=pk)
+    except Remark.DoesNotExist:
+        raise Http404("Doesn't Exist, Seriously")
     return render(request, 'app1/priKey.html', {"ds": dateStored})
 
 
-@login_required(redirect_field_name="http://127.0.0.1:8000/index4", login_url='http://127.0.0.1:8000/admin')
-def index4(request):
-    return render(request, 'app1/restriction.html', {})
+# @login_required(redirect_field_name="http://127.0.0.1:8000/index4", login_url='http://127.0.0.1:8000/admin')
+# def index4(request):
+#     return render(request, 'app1/restriction.html', {})
+
+class Index4(LoginRequiredMixin, TemplateView):
+    template_name = 'app1/restriction.html'
+    login_url = 'http://127.0.0.1:8000/admin/'
