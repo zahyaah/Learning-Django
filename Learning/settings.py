@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # My Apps
     'app1',
     'app2',
+    'displayAll',
 ]
 
 MIDDLEWARE = [

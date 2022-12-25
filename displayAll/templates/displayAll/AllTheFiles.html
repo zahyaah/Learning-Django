@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+
+    <body>
+        <h2>
+            Checkout the contents:
+        </h2>
+        <h3>APP 1</h3>
+        <ol>
+            <li><a href="{% url 'firstOne' %}" target="_blank"> First </a></li>
+            <li><a href="{% url 'secondOne' %}" target="_blank"> Second </a></li>
+            <li> Third
+                <ul>
+                    <li> <a href="{% url 'thirdOne' pk=1 %}" target="_blank">Third (i)</a>  </li>
+                    <li><a href="{% url 'thirdOne' pk=2 %}" target="_blank">Third (ii) </a> </li>
+                    <li><a href="{% url 'thirdOne' pk=3 %}" target="_blank"> Third (iii) </a></li>
+                    <li><a href="{% url 'thirdOne' pk=4 %}" target="_blank"> Third (iv) </a></li>
+                    <li><a href="{% url 'thirdOne' pk=5 %}" target="_blank"> Third (v) </a></li>
+                    <li><a href="{% url 'thirdOne' pk=6 %}" target="_blank"> Third (vi) </a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'fourthOne' %}" target="_blank"> Fourth</a></li>
+        </ol>
+        <br>
+        <hr>
+
+        <h3> APP 2</h3>
+        <ol>
+            <li> <a href="{% url 'TakeOne' %}" target="_blank"> First </a></li>
+            <li> <a href="{% url 'TakeTwo' %}" target="_blank"> Second </a></li>
+        </ol>
+        <br>
+        <hr>
+
+            <a href="http://127.0.0.1:8000/admin"> Admin </a>
+    </body>
+</html>
