@@ -9,12 +9,13 @@ from django.views.generic import (TemplateView,
                                   ListView,
                                   CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import RemarkForm
 
 
 class RemarkCreateView(CreateView):
     model = Remark
-    # template_name = 'app1/remark_form.html'
-    fields = ["name", "text"]
+    # fields = ["name", "text"]
+    form_class = RemarkForm
     success_url = "/app1/index2/"
 
 
@@ -67,5 +68,4 @@ class Index3(DetailView):
 class Index4(LoginRequiredMixin, TemplateView):
     template_name = 'app1/restriction.html'
     login_url = 'http://127.0.0.1:8000/admin/'
-
 
