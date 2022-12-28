@@ -4,8 +4,18 @@ from datetime import date
 from .models import Remark
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic import (TemplateView,
+                                  DetailView,
+                                  ListView,
+                                  CreateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class RemarkCreateView(CreateView):
+    model = Remark
+    # template_name = 'app1/remark_form.html'
+    fields = ["name", "text"]
+    success_url = "/app1/index2/"
 
 
 def index(request):
@@ -57,3 +67,5 @@ class Index3(DetailView):
 class Index4(LoginRequiredMixin, TemplateView):
     template_name = 'app1/restriction.html'
     login_url = 'http://127.0.0.1:8000/admin/'
+
+
