@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Private Key</title>
-</head>
-<body>
-    <h3>{{ ds.name }}</h3>
-    <h4>{{ ds.text }}</h4>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <p class="border-primary">{{ ds.name }}</p>
+    <p class="border-dark">{{ ds.text }}</p>
+
+    <a href="{% url 'RUV' pk=ds.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'secondOne' %}" class="btn btn-primary">Back</a>
+{% endblock %}
