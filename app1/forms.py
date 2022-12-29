@@ -20,6 +20,6 @@ class RemarkForm(forms.ModelForm):
 
     def clean_text(self):
         text = self.cleaned_data["text"]
-        if "@gmail" not in text:
+        if "Django" not in text:
             raise ValidationError("Only Google mails")
         return text
