@@ -7,9 +7,17 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import (TemplateView,
                                   DetailView,
                                   ListView,
-                                  CreateView)
+                                  CreateView,
+                                  UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import RemarkForm
+
+
+class RemarkUpdateView(UpdateView):
+    model = Remark
+    # fields = ["name", "text"]
+    form_class = RemarkForm
+    success_url = "/app1/index2/"
 
 
 class RemarkCreateView(CreateView):

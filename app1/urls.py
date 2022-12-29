@@ -8,4 +8,5 @@ urlpatterns = [
     path('index3/<int:pk>', views.Index3.as_view(), name="thirdOne"),
     path('index4/', views.Index4.as_view(), name="fourthOne"),
     path('index5/new/', views.RemarkCreateView.as_view(), name='RCV'),
+    path('index6/<int:pk>/edit', views.RemarkUpdateView.as_view(), name="RUV"),
 ]
