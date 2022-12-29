@@ -3,13 +3,13 @@
 {% block content %}
     <form method="POST"> {% csrf_token %}
 {#        {{ form|linebreaks }}#}
-        <div class="container">
-            <p class="text-primary"> Name: </p> {{ form.name }}
-        </div>
-
-        <div class="container">
-            <p class="text-secondary"> Text: </p> {{ form.text }}
-        </div>
+{#        <div class="container">#}
+{#            <p class="text-primary"> Name: </p> {{ form.name }}#}
+{#        </div>#}
+        {{ form }}
+{#        <div class="container">#}
+{#            <p class="text-secondary"> Text: </p> {{ form.text }}#}
+{#        </div>#}
         <button type="submit" class="btn btn-primary my-5"> Submit </button>
     </form>
 
