@@ -9,8 +9,15 @@ from django.views.generic import (TemplateView,
                                   ListView,
                                   CreateView,
                                   UpdateView)
+from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import RemarkForm
+
+
+class RemarkDeleteView(DeleteView):
+    model = Remark
+    success_url = "/app1/index2/"
+    template_name = 'app1/remark_delete.html'
 
 
 class RemarkUpdateView(UpdateView):

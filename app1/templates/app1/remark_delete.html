@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST"> {% csrf_token %}
+        <p class="bg-dark p-5 text-primary">Are you sure you want to delete {{ ds.name }} ?</p>
+        <input type="submit" class="btn btn-danger" value="Confirm">
+        <a href="{% url 'secondOne' %}" class="btn btn-danger">Back</a>
+    </form>
+{% endblock %}

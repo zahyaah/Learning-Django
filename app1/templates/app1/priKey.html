@@ -4,6 +4,7 @@
     <p class="border-primary">{{ ds.name }}</p>
     <p class="border-dark">{{ ds.text }}</p>
 
+    <a href="{% url 'RDV' pk=ds.id %}" class="btn btn-danger">Delete</a>
     <a href="{% url 'RUV' pk=ds.id %}" class="btn btn-primary">Edit</a>
     <a href="{% url 'secondOne' %}" class="btn btn-primary">Back</a>
 {% endblock %}
